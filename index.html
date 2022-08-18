@@ -1,0 +1,251 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>House Price Prediction</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <div class="login-root">
+    <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
+      <div class="loginbackground box-background--white padding-top--64">
+        <div class="loginbackground-gridContainer">
+          <div class="box-root flex-flex" style="grid-area: top / start / 8 / end;">
+            <div class="box-root" style="background-image: linear-gradient(white 0%, rgb(247, 250, 252) 33%); flex-grow: 1;">
+            </div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 4 / 2 / auto / 5;">
+            <div class="box-root box-divider--light-all-2 animationLeftRight tans3s" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 6 / start / auto / 2;">
+            <div class="box-root box-background--blue800" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 7 / start / auto / 4;">
+            <div class="box-root box-background--blue animationLeftRight" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 8 / 4 / auto / 6;">
+            <div class="box-root box-background--gray100 animationLeftRight tans3s" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 2 / 15 / auto / end;">
+            <div class="box-root box-background--cyan200 animationRightLeft tans4s" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 3 / 14 / auto / end;">
+            <div class="box-root box-background--blue animationRightLeft" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 4 / 17 / auto / 20;">
+            <div class="box-root box-background--gray100 animationRightLeft tans4s" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 5 / 14 / auto / 17;">
+            <div class="box-root box-divider--light-all-2 animationRightLeft tans3s" style="flex-grow: 1;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+        <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
+          <h1><a href="#" rel="dofollow">House Price Prediction</a></h1>
+        </div>
+        <div class="formbg-outer">
+          <div class="formbg">
+                <div class="formbg-inner padding-horizontal--48">
+                    <form id="stripe-login">
+                        <span class="padding-bottom--15">Select Your House Style </span>
+
+                        <input type="radio" id="1story" name="HouseStyle" value="0">
+                            <label for="1story">One story</label><br>
+                        <input type="radio" id="1.5Fin" name="HouseStyle" value="1">
+                        <label for="1.5Fin">One and one-half story(2nd level finished)</label><br>
+                        <input type="radio" id="1.5Unf" name="HouseStyle" value="2">
+                        <label for="1.5Unf">One and one-half story(2nd level unfinished)</label><br>
+                        <input type="radio" id="2story" name="HouseStyle" value="3">
+                        <label for="2story">Two story</label><br>
+                        <input type="radio" id="2.5Fin" name="HouseStyle" value="4">
+                        <label for="2.5Fin">Two and one-half story(3rd level finished)</label><br>
+                        <input type="radio" id="2.5Unf" name="HouseStyle" value="5">
+                        <label for="2.5Unf">Two and one-half story(3rd level unfinished)</label><br>
+                        <input type="radio" id="SLvl" name="HouseStyle" value="6">
+                        <label for="SLvl">Split Level</label><br>
+                        <input type="radio" id="SFoyer" name="HouseStyle" value="7">
+                        <label for="SFoyer">Split Foyer</label>
+                        <br>
+                        <br>
+                        <span class="padding-bottom--15">Enter the year of built of your house </span>
+                        <input type="number" id="YearBuilt" name="YearBuilt" value="1980" required> <br>
+                        <br>
+                        <!--------------------------------------------------------------------------------->
+                        <span class="padding-bottom--15">Enter the remodel date</span>
+                        <input type="number" id="YearRemodAdd" name="YearRemodAdd" value="1980" required> <br>
+                        <br>
+                        <!------------------------------------------------------------------------------>
+                        <span class="padding-bottom--15">Select the total square feet of basement area</span>
+                        <input type="number" id="TotalBsmtSF" name="TotalBsmtSF" value="920" required> <br>
+                        <br>
+                        <!--------------------------------------------------------------------------------->
+                        <span class="padding-bottom--15">Select the above grade (ground) living area square feet</span>
+                        <input type="number" id="GrLivArea" name="GrLivArea" value="920" required> <br>
+                        <br>
+                        <!--------------------------------------------------------------------------------->
+                        <span class="padding-bottom--15">Enter the total rooms above grade (does not include bathrooms)</span>
+                        <input type="number" id="TotRmsAbvGrd" name="TotRmsAbvGrd" value="2" required> <br>
+                        <br>
+                        <!---------------------------------------------------------------------------------->
+                        <span class="padding-bottom--15">Enter the size of garage in car capacity</span>
+                        <input type="number" id="GarageCars" name="GarageCars" value="2" required> <br>
+                        <br>
+                        <!---------------------------------------------------------------------------------->
+                        <span class="padding-bottom--15">Enter the size of garage in square feet</span>
+                        <input type="number" id="GarageArea" name="GarageArea" value="460" required> <br>
+                        <br>
+                        <span class="padding-bottom--15">Select the Type of heating</span>
+                        
+                    <input type="radio" id="GasA" name="Heating" value="0">
+                  <label for="GasA">Gas forced warm air furnace</label><br>
+                    <input type="radio" id="GasW" name="Heating" value="1">
+                  <label for="GasW">Gas hot water</label><br>
+                    <input type="radio" id="Grav" name="Heating" value="2">
+                  <label for="Grav">Gravity furnace</label><br>
+                    <input type="radio" id="Wall" name="Heating" value="3">
+                  <label for="Wall">Wall furnace</label><br>
+                    <input type="radio" id="OthW" name="Heating" value="4">
+                  <label for="OthW">Hot water or steam heat other than gas</label><br>
+                    <input type="radio" id="Floor" name="Heating" value="5">
+                  <label for="Floor">Floor Furnace</label><br>
+                <!----------------------------------------------------------->
+                <br>
+                <span class="padding-bottom--15">Do you have central air conditioning</span>
+                <input type="radio" id="Yes" name="CentralAir" value="0">
+                <label for="Yes">Yes</label><br>
+                <input type="radio" id="No" name="CentralAir" value="1">
+                <label for="No">No</label>
+                <br>
+                <br>
+                <!--------------------------------------------------------------->
+                <span class="padding-bottom--15">Select the electrical system</span>                
+                    <input type="radio" id="SBrkr" name="Electrical" value="0">
+                  <label for="SBrkr">Standard Circuit Breakers & Romex</label><br>
+                    <input type="radio" id="FuseF" name="Electrical" value="1">
+                  <label for="FuseF">60 AMP Fuse Box and mostly Romex wiring (Fair)</label><br>
+                    <input type="radio" id="FuseA" name="Electrical" value="2">
+                  <label for="FuseA">Fuse Box over 60 AMP and all Romex wiring (Average)</label><br>
+                    <input type="radio" id="FuseP" name="Electrical" value="3">
+                  <label for="FuseP">60 AMP Fuse Box and mostly knob & tube wiring (poor)</label><br>
+                    <input type="radio" id="Mix" name="Electrical" value="4">
+                  <label for="Mix">Mixed</label><br>
+                <br>
+                    <!------------------------------------------------------------------>
+                    <span class="padding-bottom--15">How much full bathrooms above grade do you have</span>
+                    <input type="number" id="FullBath" name="FullBath" value="0"  placeholder="2" required> <br>
+                    <!------------------------------------------------------------------>
+                    <br>
+                    <span class="padding-bottom--15">Rates the overall material and finish of the house</span>                    
+                        <input type="radio" id="Very_Excellent" name="OverallQual" value="10">
+                      <label for="Very_Excellent">Very Excellent</label><br>
+                        <input type="radio" id="Excellent" name="OverallQual" value="9">
+                      <label for="Excellent">Excellent</label><br>
+                        <input type="radio" id="Very_Good" name="OverallQual" value="8">
+                      <label for="Very_Good">Very Good</label><br>
+                        <input type="radio" id="Good" name="OverallQual" value="7">
+                      <label for="Good">Good</label><br>
+                        <input type="radio" id="Above_Average" name="OverallQual" value="6">
+                      <label for="Above_Average">Above Average</label><br>
+                        <input type="radio" id="Average" name="OverallQual" value="5">
+                      <label for="Average">Average</label><br>
+                        <input type="radio" id="Below-Average" name="OverallQual" value="4">
+                      <label for="Below-Average">Below Average</label><br>
+                        <input type="radio" id="Fair" name="OverallQual" value="3">
+                      <label for="Fair">Fair</label><br>
+                    <input type="radio" id="Poor" name="OverallQual" value="2">
+                      <label for="Poor">Poor</label><br>
+                        <input type="radio" id="Very_Poor" name="OverallQual" value="1">
+                      <label for="Very_Poor">Very Poor</label><br>
+                    <button type="button" id="prediction" onclick="callAPI()">Predict</button>
+                    </form>
+                </div>
+           </div>
+          <div class="footer-link padding-top--24">
+            <div class="listing padding-top--24 padding-bottom--24 flex-flex center-center">
+              <span><a href="#">© HousePricePrediction</a></span>
+              <span><a href="#">Contact</a></span>
+              <span><a href="#">Privacy & terms</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+        <script>    
+                    
+            // define the callAPI function that takes a first name and last name as parameters
+            function callAPI(){
+            var HouseStyle
+            var HouseStyles = document.getElementsByName('HouseStyle')
+            for (var i of HouseStyles)
+                {
+                if (i.checked) {
+                    HouseStyle=i.value
+                }
+                }
+            
+            var YearBuilt=document.getElementById('YearBuilt').value
+            var Heating
+            var Heatings = document.getElementsByName('Heating')
+            for (var i of Heatings)
+                {
+                if (i.checked) {
+                    Heating=i.value
+                }
+                }
+                var CentralAir
+            var CentralAirs = document.getElementsByName('CentralAir')
+            for (var i of CentralAirs)
+                {
+                if (i.checked) {
+                    CentralAir=i.value
+                }
+                }
+            var Electrical
+            var Electricals = document.getElementsByName('Electrical')
+            for (var i of Electricals)
+                {
+                if (i.checked) {
+                    Electrical=i.value
+                }
+                }
+            
+            var FullBath=document.getElementById('FullBath').value
+            var OverallQual
+            var OverallQuals = document.getElementsByName('OverallQual')
+            for (var i of OverallQuals)
+                {
+                if (i.checked) {
+                    OverallQual=i.value
+                }
+                }
+            
+            var YearRemodAdd=document.getElementById('YearRemodAdd').value
+            var TotalBsmtSF=document.getElementById('TotalBsmtSF').value
+            var GrLivArea=document.getElementById('GrLivArea').value
+            var TotRmsAbvGrd=document.getElementById('TotRmsAbvGrd').value
+            var GarageCars=document.getElementById('GarageCars').value
+            var GarageArea=document.getElementById('GarageArea').value
+                // instantiate a headers object
+                var myHeaders = new Headers();
+                // add content type header to object
+                myHeaders.append("Content-Type", "application/json");
+                // using built in JSON utility package turn object to string and store in a variable
+                var raw = JSON.stringify({"HouseStyle":HouseStyle,"YearBuilt":YearBuilt,"Heating":Heating,"CentralAir":CentralAir,"Electrical":Electrical,"FullBath":FullBath,"OverallQual":OverallQual,"YearRemodAdd":YearRemodAdd,"TotalBsmtSF":TotalBsmtSF,"GrLivArea":GrLivArea,"TotRmsAbvGrd":TotRmsAbvGrd,"GarageCars":GarageCars,"GarageArea":GarageArea});
+                // create a JSON object with parameters for API call and store in a variable
+                var requestOptions = {
+                    method: 'POST',
+                    headers: myHeaders,
+                    body: raw,
+                    redirect: 'follow'
+                };
+                // make API call with parameters and use promises to get response
+                fetch("https://9eo54xdi2h.execute-api.us-east-1.amazonaws.com/HousePricePred", requestOptions)
+                .then(response => response.text())
+                .catch(error => console.log('error', error));
+            }
+        </script>
+</body>
+
+</html>
